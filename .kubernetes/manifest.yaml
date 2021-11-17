@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: preliminary-frontend
+  namespace: timhatdiehandandermaus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: preliminary-frontend
+  template:
+    metadata:
+      labels:
+        app: preliminary-frontend
+    spec:
+      containers:
+        - name: preliminary-frontend
+          image: ghcr.io/tim-hat-die-hand-an-der-maus/preliminary-frontend:{{tag}}
+          imagePullPolicy: Always
