@@ -27,4 +27,7 @@ export default {
 #commitsha {
   display: none;
 }
+.queue-item {
+  list-style: none;
+}
 </style>
