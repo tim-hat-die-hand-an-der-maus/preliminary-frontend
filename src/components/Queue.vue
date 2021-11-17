@@ -33,6 +33,26 @@ export default defineComponent({
     const loading = ref(true);
     const error = ref(null);
 
+    function fetchMovie(id) {
+      return fetch('https://api.timhatdiehandandermaus.consulting/movie/' + id, {
+        method: 'get',
+        'headers': {
+          'Content-Type': 'application/json'
+        }
+      }).then(res => {
+        if (!res.ok) {
+          const error = new Error(res.statusText);
+          error.json = res.json();
+          throw error;
+        }
+
+        return res.json()
+      }).then(json => {
+        return json;
+      })
+      .catch(err => err)
+    }
+
     function fetchData() {
         loading.value = true;
 
@@ -50,8 +70,29 @@ export default defineComponent({
 
             return res.json();
         }).then(json => {
-            data.value = json.data;
-        }).catch(err => {
+            let value = Promise.all(json.queue.map(async queueItemResponse => {
+              let fm = await fetchMovie(queueItemResponse.id)
+                .then(json => {
+                  var res = json;
+
+                  return res;
+                })
+                .catch(err => {
+                  console.error("error: ", err);
+                  return err;
+                })
+                .then(json => json);
+
+                return fm;
+            }));
+
+            return value;
+        })
+        .then(json => {
+          data.value = json;
+          return json;
+        })
+        .catch(err => {
             error.value = err;
             if (err.json) {
                 return err.json.then(json => {
