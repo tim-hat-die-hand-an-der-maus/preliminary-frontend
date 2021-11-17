@@ -17,3 +17,5 @@ spec:
         - name: preliminary-frontend
           image: ghcr.io/tim-hat-die-hand-an-der-maus/preliminary-frontend:{{tag}}
           imagePullPolicy: Always
+          ports:
+          - containerPort: 80
