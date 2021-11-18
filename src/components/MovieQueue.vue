@@ -26,7 +26,7 @@ import { onMounted, ref } from "vue";
 import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
-  name: "Queue",
+  name: "MovieQueue",
   props: {},
   setup() {
     const data = ref(null);
