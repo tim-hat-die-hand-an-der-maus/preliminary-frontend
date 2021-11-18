@@ -1266,9 +1266,9 @@
   resolved "https://registry.npmjs.org/@vue/cli-overlay/-/cli-overlay-4.5.15.tgz"
   integrity sha512-0zI0kANAVmjFO2LWGUIzdGPMeE3+9k+KeRDXsUqB30YfRF7abjfiiRPq5BU9pOzlJbVdpRkisschBrvdJqDuDg==
 
-"@vue/cli-plugin-babel@~4.5.0":
+"@vue/cli-plugin-babel@4.5.15":
   version "4.5.15"
-  resolved "https://registry.npmjs.org/@vue/cli-plugin-babel/-/cli-plugin-babel-4.5.15.tgz"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-babel/-/cli-plugin-babel-4.5.15.tgz#ae4fb2ed54255fe3d84df381dab68509641179ed"
   integrity sha512-hBLrwYfFkHldEe34op/YNgPhpOWI5n5DB2Qt9I/1Epeif4M4iFaayrgjvOR9AVM6WbD3Yx7WCFszYpWrQZpBzQ==
   dependencies:
     "@babel/core" "^7.11.0"
@@ -1279,9 +1279,9 @@
     thread-loader "^2.1.3"
     webpack "^4.0.0"
 
-"@vue/cli-plugin-eslint@~4.5.0":
+"@vue/cli-plugin-eslint@4.5.15":
   version "4.5.15"
-  resolved "https://registry.npmjs.org/@vue/cli-plugin-eslint/-/cli-plugin-eslint-4.5.15.tgz"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-4.5.15.tgz#5781824a941f34c26336a67b1f6584a06c6a24ff"
   integrity sha512-/2Fl6wY/5bz3HD035oSnFRMsKNxDxU396KqBdpCQdwdvqk4mm6JAbXqihpcBRTNPeTO6w+LwGe6FE56PVbJdbg==
   dependencies:
     "@vue/cli-shared-utils" "^4.5.15"
@@ -1303,9 +1303,9 @@
   resolved "https://registry.npmjs.org/@vue/cli-plugin-vuex/-/cli-plugin-vuex-4.5.15.tgz"
   integrity sha512-fqap+4HN+w+InDxlA3hZTOGE0tzBTgXhKLoDydhywqgmhQ1D9JA6Feh94ze6tG8DsWX58/ujYUqA8jAz17FJtg==
 
-"@vue/cli-service@~4.5.0":
+"@vue/cli-service@4.5.15":
   version "4.5.15"
-  resolved "https://registry.npmjs.org/@vue/cli-service/-/cli-service-4.5.15.tgz"
+  resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-4.5.15.tgz#0e9a186d51550027d0e68e95042077eb4d115b45"
   integrity sha512-sFWnLYVCn4zRfu45IcsIE9eXM0YpDV3S11vlM2/DVbIPAGoYo5ySpSof6aHcIvkeGsIsrHFpPHzNvDZ/efs7jA==
   dependencies:
     "@intervolga/optimize-cssnano-plugin" "^1.0.5"
@@ -1402,7 +1402,7 @@
     "@vue/compiler-core" "3.2.22"
     "@vue/shared" "3.2.22"
 
-"@vue/compiler-sfc@3.2.22", "@vue/compiler-sfc@^3.0.0":
+"@vue/compiler-sfc@3.2.22":
   version "3.2.22"
   resolved "https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-3.2.22.tgz"
   integrity sha512-tWRQ5ge1tsTDhUwHgueicKJ8rYm6WUVAPTaIpFW3GSwZKcOEJ2rXdfkHFShNVGupeRALz2ET2H84OL0GeRxY0A==
@@ -1442,9 +1442,9 @@
   optionalDependencies:
     prettier "^1.18.2 || ^2.0.0"
 
-"@vue/composition-api@^1.4.0":
+"@vue/composition-api@1.4.0":
   version "1.4.0"
-  resolved "https://registry.npmjs.org/@vue/composition-api/-/composition-api-1.4.0.tgz"
+  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-1.4.0.tgz#784450d0da1ecfd82f4094053ca593849cbd2e37"
   integrity sha512-fanqJw1cqhkfS1dcpFY52CeR0aWDBr7ub/0ObPWqMnNPdRsMi1gX04Q3aLeRtJEuVeCFewNbqvkPskkSPTVaXQ==
   dependencies:
     tslib "^2.3.1"
@@ -1941,9 +1941,9 @@ aws4@^1.8.0:
   resolved "https://registry.npmjs.org/aws4/-/aws4-1.11.0.tgz"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
-babel-eslint@^10.1.0:
+babel-eslint@10.1.0:
   version "10.1.0"
-  resolved "https://registry.npmjs.org/babel-eslint/-/babel-eslint-10.1.0.tgz"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-10.1.0.tgz#6968e568a910b78fb3779cdd8b6ac2f479943232"
   integrity sha512-ifWaTHQ0ce+448CYop8AdrQiBsGrnC+bMgfyKFdi6EsPLTAWG+QfyDeM6OH+FmWnKvEq5NnBMLvlBUPKQZoDSg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
@@ -2798,9 +2798,9 @@ core-js-compat@^3.18.0, core-js-compat@^3.19.1, core-js-compat@^3.6.5:
     browserslist "^4.17.6"
     semver "7.0.0"
 
-core-js@^3.6.5:
+core-js@3.19.1, core-js@^3.6.5:
   version "3.19.1"
-  resolved "https://registry.npmjs.org/core-js/-/core-js-3.19.1.tgz"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.19.1.tgz#f6f173cae23e73a7d88fa23b6e9da329276c6641"
   integrity sha512-Tnc7E9iKd/b/ff7GFbhwPVzJzPztGrChB8X8GLqoYGdEOG8IpLnK1xPyo3ZoO3HsK6TodJS58VGPOxA+hLHQMg==
 
 core-util-is@1.0.2:
@@ -3533,10 +3533,10 @@ eslint-loader@^2.2.1:
     object-hash "^1.1.4"
     rimraf "^2.6.1"
 
-eslint-plugin-vue@8.0.3:
-  version "8.0.3"
-  resolved "https://registry.npmjs.org/eslint-plugin-vue/-/eslint-plugin-vue-8.0.3.tgz"
-  integrity sha512-Rlhhy5ltzde0sRwSkqHuNePTXLMMaJ5+qsQubM4RYloYsQ8cXlnJT5MDaCzSirkGADipOHtmQXIbbPFAzUrADg==
+eslint-plugin-vue@8.1.0:
+  version "8.1.0"
+  resolved "https://registry.npmjs.org/eslint-plugin-vue/-/eslint-plugin-vue-8.1.0.tgz"
+  integrity sha512-dw0FlOAyR4W3LO5qF2REkYcZbFaj5apzvGOZBZ6Ij2azZqcPQFB6ZvdKtSdsyOCBbEWCe7yzQ5+4qQGnmFW9TQ==
   dependencies:
     eslint-utils "^3.0.0"
     natural-compare "^1.4.0"
@@ -3596,9 +3596,9 @@ eslint-visitor-keys@^3.0.0:
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.1.0.tgz"
   integrity sha512-yWJFpu4DtjsWKkt5GeNBBuZMlNcYVs6vRCLoCVEJrTjaSB6LC98gFipNK/erM2Heg/E8mIK+hXG/pJMLK+eRZA==
 
-eslint@^6.7.2:
+eslint@6.8.0:
   version "6.8.0"
-  resolved "https://registry.npmjs.org/eslint/-/eslint-6.8.0.tgz"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.8.0.tgz#62262d6729739f9275723824302fb227c8c93ffb"
   integrity sha512-K+Iayyo2LtyYhDSYwz5D5QdWw0hCacNzyq1Y821Xna2xSJj7cijoLLYmLxTQgcgZ9mC61nryMy9S7GRbYpI5Ig==
   dependencies:
     "@babel/code-frame" "^7.0.0"
@@ -8377,9 +8377,9 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^3.0.0:
+vue@3.2.22:
   version "3.2.22"
-  resolved "https://registry.npmjs.org/vue/-/vue-3.2.22.tgz"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.22.tgz#46e4dd89e98cc4b851ae1eb35f00ced413a34bb7"
   integrity sha512-KD5nZpXVZquOC6926Xnp3zOvswrUyO9Rya7ZUoxWFQEjFDW4iACtwzubRB4Um2Om9kj6CaJOqAVRDSFlqLpdgw==
   dependencies:
     "@vue/compiler-dom" "3.2.22"
