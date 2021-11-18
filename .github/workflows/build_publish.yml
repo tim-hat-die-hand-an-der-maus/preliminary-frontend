@@ -17,6 +17,8 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn install
+      - name: update commit sha
+        run: sed -i -e "s#__commit_sha__#$(echo ${GITHUB_SHA})#g" src/App.vue
       - run: yarn build
       - name: Build the tagged Docker image
         run: docker build -t ghcr.io/tim-hat-die-hand-an-der-maus/preliminary-frontend:${GITHUB_SHA} .
@@ -30,8 +32,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: update tag in manifest.yml
         run: sed -i -e "s#{{tag}}#$(echo ${GITHUB_SHA})#g" .kubernetes/manifest.yaml
-      - name: update commit sha
-        run: sed -i -e "s#__commit_sha__#$(echo ${GITHUB_SHA})#g" src/App.vue
       - uses: danielr1996/kubectl-action@1.0.0
         name: apply config
         with:
