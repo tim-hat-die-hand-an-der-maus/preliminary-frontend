@@ -41,4 +41,7 @@ a {
 #queue {
   display: flex;
 }
+.queue-item-cover-image {
+  width: 250px;
+}
 </style>
