@@ -5,7 +5,7 @@
     <li class="queue-item" v-for="(movie, index) in data" :key="index">
       <div>
         <h2>
-          <a :href="'https://imdb.com/title/' + movie.imdb.id" class="queue-item-imdb-title">{{ movie.imdb.title }}</a>
+          <a :href="'https://imdb.com/title/tt' + movie.imdb.id" class="queue-item-imdb-title">{{ movie.imdb.title }}</a>
           ({{ movie.imdb.year }}) {{ movie.imdb.rating }}⭐
         </h2>
 
