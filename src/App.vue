@@ -1,16 +1,16 @@
 <template>
   <p id="commitsha">__commit_sha__</p>
 
-  <Queue />
+  <MovieQueue />
 </template>
 
 <script>
-import Queue from './components/Queue.vue'
+import MovieQueue from './components/MovieQueue.vue'
 
 export default {
   name: 'App',
   components: {
-    Queue
+    MovieQueue
   }
 }
 </script>
