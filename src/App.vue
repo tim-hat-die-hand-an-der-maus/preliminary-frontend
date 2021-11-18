@@ -36,5 +36,9 @@ a {
 }
 .queue-item {
   list-style: none;
+  flex: 1;
+}
+#queue {
+  display: flex;
 }
 </style>
