@@ -25,88 +25,89 @@
 import { onMounted, ref } from "vue";
 import { defineComponent } from "@vue/composition-api";
 
+const data = ref(null);
+const loading = ref(true);
+const error = ref(null);
+
+function fetchMovie(id) {
+  return fetch('https://api.timhatdiehandandermaus.consulting/movie/' + id, {
+    method: 'get',
+    'headers': {
+      'Content-Type': 'application/json'
+    }
+  }).then(res => {
+    if (!res.ok) {
+      const error = new Error(res.statusText);
+      error.json = res.json();
+      throw error;
+    }
+
+    return res.json()
+  }).then(json => {
+    return json;
+  })
+  .catch(err => err)
+}
+
+function fetchData(initial) {
+    loading.value = initial;
+
+    return fetch('https://api.timhatdiehandandermaus.consulting/queue', {
+        method: 'get',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(res => {
+        if (!res.ok) {
+            const error = new Error(res.statusText);
+            error.json = res.json();
+            throw error;
+        }
+
+        return res.json();
+    }).then(json => {
+        let value = Promise.all(json.queue.map(async queueItemResponse => {
+          let fm = await fetchMovie(queueItemResponse.id)
+            .then(json => {
+              var res = json;
+
+              return res;
+            })
+            .catch(err => {
+              console.error("error: ", err);
+              return err;
+            })
+            .then(json => json);
+
+            return fm;
+        }));
+
+        return value;
+    })
+    .then(json => {
+      data.value = json;
+
+      return json;
+    })
+    .catch(err => {
+        error.value = err;
+        if (err.json) {
+            return err.json.then(json => {
+                error.value.message = json.message;
+            });
+        }
+    })
+    .then(() => {
+        loading.value = false;
+    })
+}
+
 export default defineComponent({
   name: "MovieQueue",
   props: {},
   setup() {
-    const data = ref(null);
-    const loading = ref(true);
-    const error = ref(null);
-
-    function fetchMovie(id) {
-      return fetch('https://api.timhatdiehandandermaus.consulting/movie/' + id, {
-        method: 'get',
-        'headers': {
-          'Content-Type': 'application/json'
-        }
-      }).then(res => {
-        if (!res.ok) {
-          const error = new Error(res.statusText);
-          error.json = res.json();
-          throw error;
-        }
-
-        return res.json()
-      }).then(json => {
-        return json;
-      })
-      .catch(err => err)
-    }
-
-    function fetchData() {
-        loading.value = true;
-
-        return fetch('https://api.timhatdiehandandermaus.consulting/queue', {
-            method: 'get',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res => {
-            if (!res.ok) {
-                const error = new Error(res.statusText);
-                error.json = res.json();
-                throw error;
-            }
-
-            return res.json();
-        }).then(json => {
-            let value = Promise.all(json.queue.map(async queueItemResponse => {
-              let fm = await fetchMovie(queueItemResponse.id)
-                .then(json => {
-                  var res = json;
-
-                  return res;
-                })
-                .catch(err => {
-                  console.error("error: ", err);
-                  return err;
-                })
-                .then(json => json);
-
-                return fm;
-            }));
-
-            return value;
-        })
-        .then(json => {
-          data.value = json;
-          return json;
-        })
-        .catch(err => {
-            error.value = err;
-            if (err.json) {
-                return err.json.then(json => {
-                    error.value.message = json.message;
-                });
-            }
-        })
-        .then(() => {
-            loading.value = false;
-        })
-    }
-
     onMounted(() => {
-      fetchData();
+      fetchData(true);
     });
 
     return {
@@ -114,6 +115,14 @@ export default defineComponent({
       loading,
       error,
     };
+  },
+  created() {
+    setInterval(() => {
+      console.log("update");
+      fetchData(false);
+
+      this.$forceUpdate();
+    }, 30000)
   },
 });
 </script>
