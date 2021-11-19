@@ -44,5 +44,9 @@ a {
 }
 .queue-item-cover-image {
   width: 250px;
+  max-height: 500px;
+}
+.queue-item-header {
+  height: 80px;
 }
 </style>

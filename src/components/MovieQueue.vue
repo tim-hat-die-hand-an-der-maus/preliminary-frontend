@@ -4,7 +4,7 @@
   <ul v-if="!loading && data && data.length" id="queue">
     <li class="queue-item" v-for="(movie, index) in data" :key="index">
       <div>
-        <h2>
+        <h2 class="queue-item-header">
           <a :href="'https://imdb.com/title/tt' + movie.imdb.id" class="queue-item-imdb-title" target="_blank">{{ movie.imdb.title }}</a>
           ({{ movie.imdb.year }}) {{ movie.imdb.rating }}⭐
         </h2>
