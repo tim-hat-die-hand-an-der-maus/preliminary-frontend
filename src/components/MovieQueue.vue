@@ -9,7 +9,7 @@
           ({{ movie.imdb.year }}) {{ movie.imdb.rating }}⭐
         </h2>
 
-        <img :src="movie.imdb.coverUrl" v-bind:alt="'cover for ' + movie.imdb.title" class="queue-item-cover-image" />
+        <img :src="movie.imdb.cover.url" v-bind:alt="'cover for ' + movie.imdb.title" class="queue-item-cover-image" width="250px" :height="250 * movie.imdb.cover.ratio + 'px'" />
       </div>
     </li>
   </ul>
