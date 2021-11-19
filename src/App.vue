@@ -40,6 +40,7 @@ a {
 }
 #queue {
   display: flex;
+  flex-wrap: wrap;
 }
 .queue-item-cover-image {
   width: 250px;
