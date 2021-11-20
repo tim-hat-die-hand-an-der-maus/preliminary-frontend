@@ -42,9 +42,7 @@ function fetchMovie(id) {
       throw error;
     }
 
-    return res.json()
-  }).then(json => {
-    return json;
+    return res.json();
   })
   .catch(err => err)
 }
@@ -65,29 +63,14 @@ function fetchData(initial) {
         }
 
         return res.json();
-    }).then(json => {
-        let value = Promise.all(json.queue.map(async queueItemResponse => {
-          let fm = await fetchMovie(queueItemResponse.id)
-            .then(json => {
-              var res = json;
-
-              return res;
-            })
+    }).then(json => Promise.all(json.queue.map(async queueItemResponse =>
+          await fetchMovie(queueItemResponse.id)
             .catch(err => {
-              console.error("error: ", err);
+              console.error("[ fetchMovie: ", err, " ]");
               return err;
-            })
-            .then(json => json);
-
-            return fm;
-        }));
-
-        return value;
-    })
+            }))))
     .then(json => {
       data.value = json;
-
-      return json;
     })
     .catch(err => {
         error.value = err;
