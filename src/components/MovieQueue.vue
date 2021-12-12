@@ -16,7 +16,6 @@
 
   <p v-if="loading">loading...</p>
   <p v-if="error">
-    <!-- TODO -->
     error loading queue {{ error.message }}
   </p>
 </template>
