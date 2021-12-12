@@ -29,6 +29,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn install
+      - name: update commit sha
+        run: sed -i -e "s#__commit_sha__#$(echo ${GITHUB_SHA})#g" src/App.vue
+      - run: yarn build
+      - name: Build the tagged Docker image
       - name: Build the tagged Docker image
         run: docker build -t ghcr.io/tim-hat-die-hand-an-der-maus/preliminary-frontend:${GITHUB_SHA} .
       - name: Push the tagged Docker image
