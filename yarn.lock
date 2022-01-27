@@ -1442,12 +1442,10 @@
   optionalDependencies:
     prettier "^1.18.2 || ^2.0.0"
 
-"@vue/composition-api@1.4.4":
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-1.4.4.tgz#42cfbe6e3c0dc16100d725cdb0ea1c443919cc7a"
-  integrity sha512-0AMpkSy28NG1BUqTPXLfQzJUnjSp+qUa4jaG7A2FBRSKHJOl1g10/xvNb44+OW5Jg9f79zKOb7PYhFhJG2vLyQ==
-  dependencies:
-    tslib "^2.3.1"
+"@vue/composition-api@1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-1.4.5.tgz#a15f5407708a6566ade81965476218dfaa4faa29"
+  integrity sha512-2Esgcc0EGBqyck4b/yrP2VnGmMr6cPYAE4nF3StIzP8+umNAbRZqBJDc6AhE58whPRt3lHAPf83eppgW7a2dUg==
 
 "@vue/preload-webpack-plugin@^1.1.0":
   version "1.1.2"
@@ -8034,11 +8032,6 @@ tslib@^1.9.0:
   version "1.14.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-
-tslib@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
-  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tty-browserify@0.0.0:
   version "0.0.0"
