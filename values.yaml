@@ -2,7 +2,7 @@ namespace: timhatdiehandandermaus
 
 deployment:
   name: preliminary-frontend
-  image: ghcr.io/ghcr.io/tim-hat-die-hand-an-der-maus/preliminary-frontend:__TAG__
+  image: ghcr.io/tim-hat-die-hand-an-der-maus/preliminary-frontend:__TAG__
   imagePullPolicy: Always
   revisionHistoryLimit: 1
   ports:
