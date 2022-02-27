@@ -7,7 +7,7 @@ deployment:
   revisionHistoryLimit: 1
   ports:
   - 80
-  replicas: 1
+  replicas: 3
   labels:
     app: preliminary-frontend
   requests:
