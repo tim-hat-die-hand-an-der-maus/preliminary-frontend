@@ -1,6 +1,7 @@
 <template>
   <h1 v-if="loading">Queue</h1>
   <h1 v-else-if="error">Queue</h1>
+  <h1 v-else-if="queueCount !== null">Queue ({{ queueCount }})</h1>
   <h1 v-else>Queue ({{ data.length }})</h1>
 
   <ul v-if="!loading && data && data.length" id="queue">
@@ -29,6 +30,7 @@ import { defineComponent } from "@vue/composition-api";
 const data = ref([]);
 const loading = ref(true);
 const error = ref(null);
+const queueCount = ref(null);
 
 function fetchMovie(id) {
   return fetch('https://api.timhatdiehandandermaus.consulting/movie/' + id, {
@@ -48,8 +50,15 @@ function fetchMovie(id) {
   .catch(err => err)
 }
 
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
 function fetchData(initial) {
     loading.value = initial;
+    queueCount.value = initial;
 
     return fetch('https://api.timhatdiehandandermaus.consulting/queue', {
         method: 'get',
@@ -66,6 +75,9 @@ function fetchData(initial) {
         return res.json();
     }).then(json => Promise.all(json.queue.map(async (queueItemResponse, index) => {
           data.value = [];
+          if (getCookie("enableBoringQueueCounter") === "true") {
+            queueCount.value = json.queue.length;
+          }
 
           fetchMovie(queueItemResponse.id)
             .then(m => {
@@ -103,6 +115,7 @@ export default defineComponent({
 
     return {
       data,
+      queueCount,
       loading,
       error,
     };
