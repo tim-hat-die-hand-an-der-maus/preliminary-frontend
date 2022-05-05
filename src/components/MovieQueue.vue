@@ -1,5 +1,7 @@
 <template>
-  <h1>Queue</h1>
+  <h1 v-if="loading">Queue</h1>
+  <h1 v-else-if="error">Queue</h1>
+  <h1 v-else>Queue ({{ data.length }})</h1>
 
   <ul v-if="!loading && data && data.length" id="queue">
     <li class="queue-item" v-for="(movie, index) in data" :key="index">
