@@ -26,7 +26,7 @@
 import { onMounted, ref } from "vue";
 import { defineComponent } from "@vue/composition-api";
 
-const data = ref(null);
+const data = ref([]);
 const loading = ref(true);
 const error = ref(null);
 
@@ -65,14 +65,19 @@ function fetchData(initial) {
 
         return res.json();
     }).then(json => Promise.all(json.queue.map(async queueItemResponse =>
-          await fetchMovie(queueItemResponse.id)
+          fetchMovie(queueItemResponse.id)
+            .then(m => {
+              data.value.push(m);
+              loading.value = false;
+              return m;
+            })
             .catch(err => {
               console.error("[ fetchMovie: ", err, " ]");
               return err;
             }))))
-    .then(json => {
-      data.value = json;
-    })
+    // .then(json => {
+    //   data.value = json;
+    // })
     .catch(err => {
         error.value = err;
         if (err.json) {
