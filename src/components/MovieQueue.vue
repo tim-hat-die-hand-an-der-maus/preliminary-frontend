@@ -64,20 +64,25 @@ function fetchData(initial) {
         }
 
         return res.json();
-    }).then(json => Promise.all(json.queue.map(async queueItemResponse =>
+    }).then(json => Promise.all(json.queue.map(async (queueItemResponse, index) => {
+          data.value = [];
+
           fetchMovie(queueItemResponse.id)
             .then(m => {
+              m.index = index;
               data.value.push(m);
               loading.value = false;
-              return m;
             })
             .catch(err => {
               console.error("[ fetchMovie: ", err, " ]");
               return err;
-            }))))
-    // .then(json => {
-    //   data.value = json;
-    // })
+            })})))
+        .then(() => {
+          new Promise(resolve => setTimeout(resolve, 800))
+              .then(() => {
+                data.value.sort((m1, m2) => m1.index - m2.index);
+              })
+        })
     .catch(err => {
         error.value = err;
         if (err.json) {
@@ -85,9 +90,6 @@ function fetchData(initial) {
                 error.value.message = json.message;
             });
         }
-    })
-    .then(() => {
-        loading.value = false;
     })
 }
 
@@ -107,7 +109,6 @@ export default defineComponent({
   },
   created() {
     setInterval(() => {
-      console.log("update");
       fetchData(false);
 
       this.$forceUpdate();
