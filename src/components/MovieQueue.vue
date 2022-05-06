@@ -1,7 +1,7 @@
 <template>
   <h1 v-if="loading">Queue</h1>
   <h1 v-else-if="error">Queue</h1>
-  <h1 v-else-if="queueCount !== null">Queue ({{ queueCount }})</h1>
+  <h1 v-else-if="queueCount !== null && queueCount !== true">Queue ({{ queueCount }})</h1>
   <h1 v-else>Queue ({{ data.length }})</h1>
 
   <ul v-if="!loading && data && data.length" id="queue">
