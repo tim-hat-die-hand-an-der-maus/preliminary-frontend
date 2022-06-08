@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@vue/composition-api": "1.6.1",
-    "core-js": "3.22.5",
+    "core-js": "3.22.8",
     "vue": "3.2.33",
     "p-retry": "5.1.1"
   },
