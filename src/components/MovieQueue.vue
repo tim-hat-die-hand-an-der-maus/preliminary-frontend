@@ -28,6 +28,7 @@
 <script>
 import {onMounted, ref} from "vue";
 import {defineComponent} from "@vue/composition-api";
+import pRetry from "p-retry";
 
 const data = ref([]);
 const loading = ref(true);
@@ -81,7 +82,7 @@ function fetchData(initial) {
       queueCount.value = json.queue.length;
     }
 
-    fetchMovie(queueItemResponse.id)
+    pRetry(() => fetchMovie(queueItemResponse.id)
         .then(m => {
           m.index = index;
           data.value.push(m);
@@ -90,7 +91,7 @@ function fetchData(initial) {
         .catch(err => {
           console.error("[ fetchMovie: ", err, " ]");
           return err;
-        })
+        }), { retries: 3 })
   })))
       .then(() => {
         new Promise(resolve => setTimeout(resolve, 800))
@@ -113,7 +114,7 @@ export default defineComponent({
   props: {},
   setup() {
     onMounted(() => {
-      fetchData(true);
+      pRetry(() => fetchData(true), { retries: 3 });
     });
 
     return {
