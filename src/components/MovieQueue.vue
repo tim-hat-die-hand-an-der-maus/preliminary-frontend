@@ -129,7 +129,7 @@ export default defineComponent({
       fetchData(false);
 
       this.$forceUpdate();
-    }, 30000)
+    }, 300000)
   },
 });
 </script>
