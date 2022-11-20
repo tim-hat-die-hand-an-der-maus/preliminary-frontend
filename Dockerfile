@@ -1,4 +1,4 @@
-FROM node:17-alpine3.15 as builder
+FROM node:19-alpine3.15 as builder
 
 ARG GITHUBSHA
 
