@@ -41,6 +41,8 @@ a {
 .queue-item {
   list-style: none;
   flex: 1;
+  width: 250px;
+  height: 500px;
 }
 
 #queue {
@@ -49,7 +51,7 @@ a {
 }
 
 .queue-item-cover-image {
-  max-height: 500px;
+  max-height: 400px;
 }
 
 .queue-item-header {
