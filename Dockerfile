@@ -15,6 +15,6 @@ RUN sed -i -e "s#__commit_sha__#$GITHUBSHA#g" src/App.vue
 RUN yarn install
 RUN yarn build
 
-FROM nginx:1.23-alpine
+FROM nginx:1.25-alpine
 
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
