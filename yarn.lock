@@ -1444,10 +1444,10 @@
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
   integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
 
-"@types/retry@0.12.1":
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.1.tgz#d8f1c0d0dc23afad6dc16a9e993a0865774b4065"
-  integrity sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g==
+"@types/retry@0.12.2":
+  version "0.12.2"
+  resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.2.tgz#ed279a64fa438bb69f2480eda44937912bb7480a"
+  integrity sha512-XISRgDJ2Tc5q4TRqvgJtzsRkFYNJzZrhTdtMoGVBttwzzQJkPnS3WWTFc7kuDRoPtPakl+T+OfdEUjYJj7Jbow==
 
 "@types/serve-index@^1.9.1":
   version "1.9.1"
@@ -3893,6 +3893,11 @@ is-interactive@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-interactive/-/is-interactive-1.0.0.tgz#cea6e6ae5c870a7b0a0004070b7b587e0252912e"
   integrity sha512-2HvIEKRoqS62guEC+qBjpvRubdX910WCMuJTZ+I9yvqKU2/12eSL549HMwtabb4oupdj2sMP50k+XJfB/8JE6w==
 
+is-network-error@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-network-error/-/is-network-error-1.0.0.tgz#757d7af42263f18f616626e63af12abb19002bbc"
+  integrity sha512-P3fxi10Aji2FZmHTrMPSNFbNC6nnp4U5juPAIjXPHkUNubi4+qK7vvdsaNpAUwXslhYm9oyjEYTxs1xd/+Ph0w==
+
 is-number@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz"
@@ -4643,12 +4648,13 @@ p-locate@^4.1.0:
   dependencies:
     p-limit "^2.2.0"
 
-p-retry@5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/p-retry/-/p-retry-5.1.1.tgz#1950b9be441474a67f852811c1d4ec955885d2c8"
-  integrity sha512-i69WkEU5ZAL8mrmdmVviWwU+DN+IUF8f4sSJThoJ3z5A7Nn5iuO5ROX3Boye0u+uYQLOSfgFl7SuFZCjlAVbQA==
+p-retry@6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/p-retry/-/p-retry-6.2.0.tgz#8d6df01af298750009691ce2f9b3ad2d5968f3bd"
+  integrity sha512-JA6nkq6hKyWLLasXQXUrO4z8BUZGUt/LjlJxx8Gb2+2ntodU/SS63YZ8b0LUTbQ8ZB9iwOfhEPhg4ykKnn2KsA==
   dependencies:
-    "@types/retry" "0.12.1"
+    "@types/retry" "0.12.2"
+    is-network-error "^1.0.0"
     retry "^0.13.1"
 
 p-retry@^4.5.0:
